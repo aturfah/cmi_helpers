@@ -1,0 +1,25 @@
+<!doctype HTML>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='func.js') }}"></script>
+
+
+<body>
+    <h1>Hello World!</h1>
+    <p>This is the index page</p>
+    <input type='button' value="Select Directory" onclick="select_dir()" />
+    <input type='button' value="Load C" onclick="load_C()" />
+    <input type='button' value="Export to File" onclick="export_file()" />
+    <input type='button' value="Clear Directory" onclick="clear_dir()" />
+    <hr/>
+    <div id="sample_div">
+        Sample Directory info goes here
+        <table id='sample_table'></table>
+    </div>
+</body>
+
+</html>
