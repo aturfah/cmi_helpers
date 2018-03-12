@@ -1,6 +1,17 @@
-/cmi_R2015a-master/*
+# CMI Master Thing
+cmi_gui/cmi_R2015a-master/*
+
+# MATLAB output files.
 *.asv
 /helpers/*.asv
 *.m~
 /helpers/*.m~
 *.csv
+
+# MAC Files
+/c_builder/serial_analysis_scripts/
+
+# Python Files
+/c_builder/*.pyc
+/c_builder/*.csv
+/c_builder/env
