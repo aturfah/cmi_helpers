@@ -9,7 +9,7 @@ cmi_gui/cmi_R2015a-master/*
 *.csv
 
 # MAC Files
-/c_builder/serial_analysis_scripts/
+/c_builder/serial_analysis_scripts/__MACOSX/
 
 # Python Files
 /c_builder/*.pyc
