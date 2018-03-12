@@ -22,7 +22,7 @@ function varargout = cmi_gui(varargin)
 
 % Edit the above text to modify the response to help cmi_gui
 
-% Last Modified by GUIDE v2.5 12-Mar-2018 11:23:15
+% Last Modified by GUIDE v2.5 12-Mar-2018 11:33:09
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -92,3 +92,17 @@ end
 C = read_csv(file_location);
 debug_print("Finished importing C from CSV")
 
+
+% --- Executes on button press in serial_analysis_btn.
+function serial_analysis_btn_Callback(hObject, eventdata, handles)
+% hObject    handle to serial_analysis_btn (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+global C cmiObj
+if invalid_C(C)
+    return
+end
+
+debug_print('Running Serial Analysis')
+out = serial_analysis_v2(cmiObj, C);
+debug_print('Finished Serial Analysis')

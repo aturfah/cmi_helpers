@@ -3,7 +3,7 @@ function invalid = invalid_C(C)
 %   Detailed explanation goes here
 invalid = isempty(C);
 if invalid
-    debug_print("You must select some C.");
+    debug_print("You must set C.");
 end
 
 end
