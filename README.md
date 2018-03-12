@@ -7,7 +7,8 @@ Repo with helpers for Dr. Galban's CMI Group
 - cmi_gui: GUI for CMI Group's analysis scripts
 
 ## c_builder
-Web interface for generating the files catalogs.
+Python web interface for generating the files catalogs.
+See [project README](c_builder/README.md) for more info.
 
 ## cmi_gui
 MATLAB GUI to hold all the group's anaysis scripts. 
