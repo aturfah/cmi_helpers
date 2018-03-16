@@ -51,6 +51,9 @@ def load_files():
     # Prompt user for directory
     folder = askdirectory()
 
+    # Clean up tkinter window
+    root.destroy()
+    
     # Cancel button clicked, abort
     if not folder:
         print("Load Aborted")
@@ -63,8 +66,7 @@ def load_files():
     output['sample'] = pick_sample(folder_struct)
     output['status'] = True
 
-    # Clean up and return results
-    root.destroy()
+    # Return results
     return jsonify(output)
 
 
