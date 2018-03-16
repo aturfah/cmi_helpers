@@ -22,7 +22,7 @@ function varargout = cmi_gui(varargin)
 
 % Edit the above text to modify the response to help cmi_gui
 
-% Last Modified by GUIDE v2.5 12-Mar-2018 11:33:09
+% Last Modified by GUIDE v2.5 16-Mar-2018 11:14:15
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -76,6 +76,15 @@ function varargout = cmi_gui_OutputFcn(hObject, eventdata, handles)
 % Get default command line output from handles structure
 varargout{1} = handles.output;
 
+% --- Executes on button press in set_directory_btn.
+function set_directory_btn_Callback(hObject, eventdata, handles)
+% hObject    handle to set_directory_btn (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+debug_print("Setting Directory")
+dir_location = select_dir_fn();
+cd(dir_location)
+debug_print("Directory set!")
 
 % --- Executes on button press in load_c_btn.
 function load_c_btn_Callback(hObject, eventdata, handles)
