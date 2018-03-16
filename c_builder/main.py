@@ -45,7 +45,7 @@ def load_files():
 
     # Hide default window that opens
     root = Tk()
-    root.withdraw()
+    # root.withdraw()
     root.update()
 
     # Prompt user for directory
