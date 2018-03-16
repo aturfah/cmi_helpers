@@ -77,10 +77,11 @@ def load_c():
 
     # Hide default window
     root = Tk()
-    root.withdraw()
+    # root.withdraw()
     root.update()
 
     c_file = askopenfile()
+    root.destroy()
     if c_file is None:
         print("Load Aborted")
         return jsonify({'status': False})
@@ -93,7 +94,6 @@ def load_c():
     output['sample'] = pick_sample(parsed_c)
     DATA = parsed_c
 
-    root.destroy()
     return jsonify(output)
 
 
@@ -114,10 +114,11 @@ def export_file():
 
     # Hide default window that opens
     root = Tk()
-    root.withdraw()
+    # root.withdraw()
     root.update()
 
     out_filename = asksaveasfilename()
+    root.destroy()
 
     if not out_filename:
         print("Export aborted!")
@@ -149,7 +150,6 @@ def export_file():
 
     response = {}
     response["status"] = True
-    root.destroy()
     return jsonify(response)
 
 
