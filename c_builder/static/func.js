@@ -12,7 +12,7 @@ function select_dir() {
 }
 
 function load_C() {
-    $.get("/c/", 
+    $.get("/c/",
         success = function (data) {
             if (!data['status']) {
                 alert("Load aborted.")
@@ -36,7 +36,7 @@ function load_sample(sample_data) {
     header_row.append('<td>Label</td>')
     header_row.append('<td>Incremental</td>')
     header_row.append('<td>Ignore</td>')
-    
+
     sample_table.append(header_row)
     populate_form(sample_table, sample_data, "")
 
@@ -48,12 +48,12 @@ function populate_form(form_table, data, base_name) {
         if (file_ === "name") {
             continue
         }
-        
+
         if (data[file_].hasOwnProperty("file") && data[file_]["file"] === 1) {
             var tr = $('<tr>');
             // Regular Expression
             tr.append('<td><input name="regex" type="text" size=35 value="REPLACE"></td>'.replace("REPLACE", base_name + "/" + file_))
-            
+
             // Reg
             var reg_val = ""
             if ("reg" in data[file_]) {
@@ -98,8 +98,8 @@ function export_file() {
 
     var data_table = $("#sample_table")
 
-    data_table.children().each(function(i, row) {
-        if(i === 0) {
+    data_table.children().each(function (i, row) {
+        if (i === 0) {
             // Header row
             return
         }
@@ -112,7 +112,7 @@ function export_file() {
         datum['modality'] = row.find('input[name=modality]').val()
         datum['incremental'] = row.find('input[name=incremental]').is(":checked");
         datum['ignore'] = row.find('input[name=ignore]').is(":checked");
-        
+
         var regex = datum['regex']
         post_data[regex] = datum
     });
@@ -127,7 +127,7 @@ function export_file() {
                 return;
             }
 
-           console.log("Success!")
+            console.log("Success!")
         })
 }
 
