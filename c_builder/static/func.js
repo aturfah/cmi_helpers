@@ -48,7 +48,8 @@ function populate_form(form_table, data, base_name) {
         if (file_ === "name") {
             continue
         }
-        if ("file" in data[file_] && data[file_]["file"] === 1) {
+        
+        if (data[file_].hasOwnProperty("file") && data[file_]["file"] === 1) {
             var tr = $('<tr>');
             // Regular Expression
             tr.append('<td><input name="regex" type="text" size=35 value="REPLACE"></td>'.replace("REPLACE", base_name + "/" + file_))
