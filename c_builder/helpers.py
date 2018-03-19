@@ -11,8 +11,14 @@ from re import match
 def pick_sample(file_struct):
     """Choose a sample directory from the file_struct."""
     for base_key in file_struct:
+        if base_key == "name":
+            continue
         for middle_key in file_struct[base_key]:
+            if middle_key == "name":
+                continue
             for end_key in file_struct[base_key][middle_key]:
+                if end_key == "name":
+                    continue
                 return file_struct[base_key][middle_key][end_key]
 
 
