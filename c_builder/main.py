@@ -124,6 +124,9 @@ def export_file():
         print("Export aborted!")
         return jsonify({'status': False})
 
+    if "." not in out_filename:
+        out_filename = "{}.csv".format(out_filename)
+
     # Weird fix for windows outputting multiple newlines
     csv_out = writer(open(out_filename, mode='w'))
     csv_out.writerow(["first folder", "middle", "last folder", "Incremental[1]",
