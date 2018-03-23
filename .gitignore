@@ -9,9 +9,12 @@ cmi_gui/cmi_R2015a-master/*
 *.csv
 
 # MAC Files
-/cmi_gui/serial_analysis_scripts/__MACOSX/
-
+/cmi_gui/**/__MACOSX/
+/
 # Python Files
 /c_builder/*.pyc
 /c_builder/*.csv
 /c_builder/env
+
+# VS Code settings
+**/.vscode/
