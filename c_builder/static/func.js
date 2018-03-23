@@ -1,5 +1,7 @@
 function select_dir() {
-    $.get("/files/",
+    var timepoints = document.getElementById("timepoint_cb").checked;
+
+    $.get("/files/?timepoint={}".replace("{}", timepoints),
         success = function (data) {
             if (!data['status']) {
                 alert("Load aborted.")
