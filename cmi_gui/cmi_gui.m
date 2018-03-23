@@ -22,7 +22,7 @@ function varargout = cmi_gui(varargin)
 
 % Edit the above text to modify the response to help cmi_gui
 
-% Last Modified by GUIDE v2.5 23-Mar-2018 11:11:31
+% Last Modified by GUIDE v2.5 23-Mar-2018 12:53:01
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -69,8 +69,9 @@ C = {};
 
 function add_files_to_path()
 % Adds the folders in this directory to path for when we cd
-addpath('.', 'helpers', 'serial_analysis_scripts')
+addpath('.', 'helpers')
 addpath(genpath('cmi_R2015a-master'))
+addpath(genpath('analysis_scripts'))
 
 % --- Outputs from this function are returned to the command line.
 function varargout = cmi_gui_OutputFcn(hObject, eventdata, handles) 
@@ -123,9 +124,9 @@ out = serial_analysis_v2(cmiObj, C);
 debug_print('Finished Serial Analysis')
 
 
-% --- Executes on button press in tprm_btn.
-function tprm_btn_Callback(hObject, eventdata, handles)
-% hObject    handle to tprm_btn (see GCBO)
+% --- Executes on button press in ctlung_gt_btn.
+function ctlung_gt_btn_Callback(hObject, eventdata, handles)
+% hObject    handle to ctlung_gt_btn (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 global C cmiObj
@@ -133,6 +134,21 @@ if invalid_C(C)
     return
 end
 
-debug_print('Running tPRM Script')
+debug_print('Running CTLung Analysis (GT) Script')
+val = CTLung_analysis_v13(cmiObj, C, 1);
+debug_print('Finished CTLung Analysis (GT) Script')
 
-debug_print('Finished tPRM Script')
+
+% --- Executes on button press in ct_lung_prm_btn.
+function ct_lung_prm_btn_Callback(hObject, eventdata, handles)
+% hObject    handle to ct_lung_prm_btn (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+global C cmiObj
+if invalid_C(C)
+    return
+end
+
+debug_print('Running CT Lung Analysis (PRM) Script')
+val = CTLung_analysis_v13(cmiObj, C, 2);
+debug_print('Finished CT Lung Analysis (PRM) Script')
