@@ -65,7 +65,11 @@ def load_files():
     # Directory selected, get folder structure
     output = {}
     folder_struct = parse_directory(folder)
+    if timepoints:
+        folder_struct = {folder: folder_struct}
+
     DATA = folder_struct
+
     output['sample'] = pick_sample(folder_struct)
     output['status'] = True
 
