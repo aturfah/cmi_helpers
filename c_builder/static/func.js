@@ -139,3 +139,12 @@ function clear_dir() {
 
     $.get("/clear/")
 }
+
+function hide_show() {
+    var explanation_div = $('#explanation');
+    if (explanation_div.is(":visible")) {
+        explanation_div.hide()
+    } else {
+        explanation_div.show()
+    }
+}
