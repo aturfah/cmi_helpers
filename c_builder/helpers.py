@@ -8,6 +8,12 @@ from os.path import isdir
 from re import match
 
 
+def pretty_print(data):
+    import pprint
+    pp = pprint.PrettyPrinter(indent=4)
+    pp.pprint(data)
+
+
 def pick_sample(file_struct):
     """Choose a sample directory from the file_struct."""
     for base_key in file_struct:
