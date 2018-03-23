@@ -22,7 +22,7 @@ function varargout = cmi_gui(varargin)
 
 % Edit the above text to modify the response to help cmi_gui
 
-% Last Modified by GUIDE v2.5 16-Mar-2018 11:14:15
+% Last Modified by GUIDE v2.5 23-Mar-2018 11:11:31
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -121,3 +121,18 @@ end
 debug_print('Running Serial Analysis')
 out = serial_analysis_v2(cmiObj, C);
 debug_print('Finished Serial Analysis')
+
+
+% --- Executes on button press in tprm_btn.
+function tprm_btn_Callback(hObject, eventdata, handles)
+% hObject    handle to tprm_btn (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+global C cmiObj
+if invalid_C(C)
+    return
+end
+
+debug_print('Running tPRM Script')
+
+debug_print('Finished tPRM Script')
