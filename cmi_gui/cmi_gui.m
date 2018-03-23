@@ -61,10 +61,16 @@ guidata(hObject, handles);
 % UIWAIT makes cmi_gui wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 global cmiObj C
+
+add_files_to_path()
+
 cmiObj = CMIclass();
 C = {};
 
-
+function add_files_to_path()
+% Adds the folders in this directory to path for when we cd
+addpath('.', 'helpers', 'serial_analysis_scripts')
+addpath(genpath('cmi_R2015a-master'))
 
 % --- Outputs from this function are returned to the command line.
 function varargout = cmi_gui_OutputFcn(hObject, eventdata, handles) 
