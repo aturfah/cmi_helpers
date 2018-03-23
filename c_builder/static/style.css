@@ -13,3 +13,9 @@ td {
     padding-left: 3px;
     padding-right: 3px;
 }
+
+#explanation {
+    display: none;
+    padding: 5px;
+    margin: 5px;
+}
