@@ -68,7 +68,7 @@ cmiObj = CMIclass();
 C = {};
 
 function add_files_to_path()
-% Adds the folders in this directory to path for when we cd
+% Adds the folders in this directory to the path
 addpath('.', 'helpers')
 addpath(genpath('cmi_R2015a-master'))
 addpath(genpath('analysis_scripts'))
