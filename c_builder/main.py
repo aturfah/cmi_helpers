@@ -27,6 +27,7 @@ from helpers import generate_csv_rows
 C_BUILDER = Flask(__name__)
 
 DATA = None
+timepoints = None
 
 
 @C_BUILDER.route('/')
@@ -41,7 +42,9 @@ def index():
 def load_files():
     """Handle request to get a directory."""
     print("Loading files")
-    global DATA
+    global DATA, timepoints
+
+    timepoints = request.args.get("timepoint") == "true"
 
     # Hide default window that opens
     root = Tk()
