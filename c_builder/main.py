@@ -155,8 +155,8 @@ def export_file():
                     if file_ == "name":
                         continue
                     file_data = last_folder_data[file_]
-                    generate_csv_rows(
-                        file_data, sample_data, csv_out, first_folder, second_folder, last_folder)
+                    first_folder_name = first_folder.split("/")[-1]
+                    generate_csv_rows(file_data, sample_data, csv_out, first_folder_name, second_folder, last_folder)
 
     response = {}
     response["status"] = True
