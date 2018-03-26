@@ -10,7 +10,8 @@ cmi_gui/cmi_R2015a-master/*
 
 # MAC Files
 /cmi_gui/**/__MACOSX/
-/
+**/.DS_Store
+
 # Python Files
 /c_builder/*.pyc
 /c_builder/*.csv
