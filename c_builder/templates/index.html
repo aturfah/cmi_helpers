@@ -24,7 +24,31 @@
         <p>Setting the "Time Point Data" checkbox specifies that it will be reading data with distinct time points, and will adjust the folder structure appropriately.</p>
 
         <h4>Example</h4>
-        <p>Add Example here.</p>
+        <p>Suppose the sample directory is:</p>
+        <ul>
+            <li>/25793A1757_T02_Exp.mhd</li>
+            <li>/25793A1757_T02_Exp_label.mhd</li>
+            <li>/25793A1757_T02_Ins.mhd</li>
+        </ul>
+        <p>
+            Where "25793A1757" corresponds to the patient ID, and "T02" corresponds to the time point. Since time points follow the pattern T0#, the corresponding
+            Regular Expression would be "T0[0-9]"; This matches the characters "T0" followed by any number from zero to 9. The Regular Expression for the patient ID
+            would be "([^_/]+)" the explanation for this expression is provided below.<br/>
+        </p>
+        <p>
+            The "[^_/]" part of the regular expression matches any character that is not the underscore (_, which seperates name components) or the forward slash (/, which seperates file directories).
+            If, for example, you wanted to match any non-numeric character,
+            the corresponding use would be "[^0-9]". The "+" denotes that it should look for at least one matching character; this allows for it to match the
+            IDs 3A423 as well as 5HD8423B2, even though they are of differing lengths. Lastly, the parentheses surrounding are used simply to seperate the expression from the rest
+            of the text, for readability. So, the resulting regular expressions would be:
+        </p>
+        <ul>
+            <li>/([^_/]+)_T0[0-9]_Exp.mhd</li>
+            <li>/([^_/]+)_T0[0-9]_Exp_label.mhd</li>
+            <li>/([^_/]+)_T0[0-9]_Ins.mhd</li>
+        </ul>
+        <p>A helpful tool for testing regular expressions is <a href="regex101.com">regex101.com</a>, which allows for testing of regular expression matching against some test text. Make sure to select python
+        in the menu of programming languages.</p>
 
         <h2>Load C</h2>
         <p>Alternative to "Select Directory", generate the file pane from a pre-existing C file.</p>
