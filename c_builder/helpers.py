@@ -111,6 +111,8 @@ def generate_csv_rows(data_dict, sample_data, csv_out, first, middle, last, subd
 
         for sample_file in sample_data:
             sample_file_data = sample_data[sample_file]
+            sample_file_data["regex"] = sample_file_data["regex"].encode("ascii", "replace")
+
             if match(sample_file_data["regex"], name):
                 if sample_file_data["ignore"]:
                     return
