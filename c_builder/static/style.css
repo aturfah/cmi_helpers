@@ -18,4 +18,13 @@ td {
     display: none;
     padding: 5px;
     margin: 5px;
+    width: 60%;
+}
+
+.pt_id {
+    color: red;
+}
+
+.timepoint {
+    color: blue;
 }
