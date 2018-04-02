@@ -132,11 +132,10 @@ def generate_csv_rows(data_dict, sample_data, csv_out, first, middle, last, subd
 
                 if not sample_file_data["reg"] == "":
                     out_row[7] = sample_file_data["reg"]
-
+                
+                out_row[8] = "{}/{}/{}{}".format(first, middle, last, name)
+                csv_out.writerow(out_row)
                 break
-
-        out_row[8] = "{}/{}/{}{}".format(first, middle, last, name)
-        csv_out.writerow(out_row)
 
     else:  # We have a directory
         for file_info in data_dict:
