@@ -112,7 +112,7 @@ function export_file() {
         datum['reg'] = encodeURIComponent(row.find('input[name=reg]').val());
         datum['label'] = encodeURIComponent(row.find('input[name=label]').val());
         datum['modality'] = encodeURIComponent(row.find('input[name=modality]').val());
-        datum['incremental'] = encodeURIComponent(row.find('input[name=incremental]').is(":checked"));
+        datum['incremental'] = row.find('input[name=incremental]').is(":checked");
         datum['ignore'] = row.find('input[name=ignore]').is(":checked");
 
         var regex = datum['regex']
