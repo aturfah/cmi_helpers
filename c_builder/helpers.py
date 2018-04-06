@@ -109,7 +109,7 @@ def generate_csv_rows(data_dict, sample_data, csv_out, first, middle, last, subd
         out_row = [first, middle, last, "FIX ME!",
                    "FIX ME!", "FIX ME!", "FIX ME!", "FIX ME!", "FIX ME!"]
 
-        for sample_file in sample_data:
+        for sample_file in sort_keys(sample_data):
             sample_file_data = sample_data[sample_file]
             sample_file_data["regex"] = sample_file_data["regex"].encode("ascii", "replace")
 
@@ -144,3 +144,7 @@ def generate_csv_rows(data_dict, sample_data, csv_out, first, middle, last, subd
 
             generate_csv_rows(data_dict[file_info],
                               sample_data, csv_out, first, middle, last, subdir_name=name)
+
+def sort_keys(target_dict):
+    """Get sorted version of dictionary keys to sort through."""
+    return sorted(target_dict.iterkeys())

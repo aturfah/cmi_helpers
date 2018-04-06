@@ -23,6 +23,7 @@ from helpers import pick_sample
 from helpers import parse_c
 from helpers import parse_directory
 from helpers import generate_csv_rows
+from helpers import sort_keys
 
 C_BUILDER = Flask(__name__)
 
@@ -139,19 +140,19 @@ def export_file():
     csv_out.writerow(["first folder", "middle", "last folder", "Incremental[1]",
                       "Modality[2]", "subdirectory", "data/label/R/jac", "Reg", "Location"])
 
-    for first_folder in DATA:
+    for first_folder in sort_keys(DATA):
         if first_folder == "name":
             continue
         first_folder_data = DATA[first_folder]
-        for second_folder in first_folder_data:
+        for second_folder in sort_keys(first_folder_data):
             if second_folder == "name":
                 continue
             second_folder_data = first_folder_data[second_folder]
-            for last_folder in second_folder_data:
+            for last_folder in sort_keys(second_folder_data):
                 if last_folder == "name":
                     continue
                 last_folder_data = second_folder_data[last_folder]
-                for file_ in last_folder_data:
+                for file_ in sort_keys(last_folder_data):
                     if file_ == "name":
                         continue
                     file_data = last_folder_data[file_]
