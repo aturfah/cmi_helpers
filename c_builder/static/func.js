@@ -31,6 +31,9 @@ function load_sample(sample_data) {
     var sample_table = $('#sample_table')
     sample_table.empty()
 
+    var add_row_btn = $('<input type="button" value="Add Row" onclick="add_row()" />')
+    sample_table.append(add_row_btn)
+
     var header_row = $('<tr>')
     header_row.append('<td>Regular Expression</td>')
     header_row.append('<td>Reg</td>')
@@ -147,4 +150,30 @@ function hide_show() {
     } else {
         explanation_div.show()
     }
+}
+
+function add_row() {
+    var sample_table = $("#sample_table")
+    
+    var tr = $('<tr>');
+    // Regular Expression
+    tr.append('<td><input name="regex" type="text" size=35></td>')
+
+    // Reg
+    var reg_val = ""
+    tr.append('<td><input name="reg" type="text"></td>')
+
+    // Modality
+    tr.append('<td><input name="modality" type="text"></td>')
+
+    // Label
+    tr.append('<td><input name="label" type="text"></td>')
+
+    // Incremental
+    tr.append('<td><input name="incremental" type="checkbox"></td>')
+
+    // Ignore
+    tr.append('<td><input name="ignore" type="checkbox"></td>')
+
+    sample_table.append(tr)
 }

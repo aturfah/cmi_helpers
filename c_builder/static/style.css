@@ -3,6 +3,14 @@ table {
     padding: 0;
 }
 
+body {
+    font-size: 20px;
+}
+
+input {
+    font-size: 20px;
+}
+
 td {
     padding: 0 15px 0 15px;
 }
